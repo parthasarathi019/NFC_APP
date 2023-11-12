@@ -1,10 +1,22 @@
+import { Theme } from "@radix-ui/themes";
+import { Flex, Text, Button } from "@radix-ui/themes";
+import { ThemeProvider } from "./theme/ThemeProvider";
 function App() {
   return (
-    <>
-      <h1>
-        <Button appearance="primary">Hello World</Button>
-      </h1>
-    </>
+    <ThemeProvider defaultTheme="light">
+      <Theme
+        accentColor="amber"
+        appearance="inherit"
+        grayColor="sand"
+        radius="large"
+        scaling="95%"
+      >
+        <Flex direction="column" gap="2">
+          <Text>Hello from Radix Themes :)</Text>
+          <Button>Let&apos;s go</Button>
+        </Flex>
+      </Theme>
+    </ThemeProvider>
   );
 }
 
