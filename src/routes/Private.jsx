@@ -1,5 +1,6 @@
 import { useAuth } from "../hooks/useAuth";
 import { Navigate, Outlet } from "react-router-dom";
+import UserLayout from "../Layout/User/User";
 
 export function Private({ to }) {
   const { admin, load } = useAuth();
@@ -7,7 +8,9 @@ export function Private({ to }) {
     !admin ? (
       <Navigate to={to} replace={true} />
     ) : (
-      <Outlet />
+      <UserLayout>
+        <Outlet />
+      </UserLayout>
     )
   ) : (
     "hello"
