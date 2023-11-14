@@ -3,7 +3,7 @@ import { ThemeProvider } from "@/theme/ThemeProvider";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { Private } from "./routes/Private";
 import AdminProvider from "./context/Admin.auth";
-import Login from "./components/login/Login";
+import Login from "./views/login/Login";
 
 function App() {
   return (
@@ -24,7 +24,7 @@ function App() {
             >
               <Routes>
                 <Route path="/" element={<Navigate to="/dashboard" />} />
-                <Route path="/dashboard" element={<Private to="/login" />}>
+                <Route path="/dashboard" element={<Private to="/signin" />}>
                   {/* index route of Dashboard  */}
                   <Route index element={<p>hallo</p>} />
                   <Route path="*" element={<Navigate to="/dashboard" />} />
